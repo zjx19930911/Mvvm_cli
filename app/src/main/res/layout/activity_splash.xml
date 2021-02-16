@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.iflytek.mvvm_cli.ui.splash.viewmodel.SplashViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/bg"
+            android:background="@color/btn_ghost_blue_border_pressed"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+</layout>
