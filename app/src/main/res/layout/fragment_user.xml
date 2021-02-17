@@ -22,14 +22,28 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/insert"
                 android:gravity="center"
                 android:onClick="@{(view)->click.onClick(view)}"
-                android:text="我的思密达"
+                android:padding="10dp"
+                android:text="插入数据"
+                android:textSize="18sp" />
+
+            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:id="@+id/query"
+                android:gravity="center"
+                android:onClick="@{(view)->click.onClick(view)}"
+                android:padding="10dp"
+                android:text="查询数据"
                 android:textSize="18sp" />
         </LinearLayout>
     </com.qmuiteam.qmui.widget.QMUIWindowInsetLayout>

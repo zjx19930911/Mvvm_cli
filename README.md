@@ -1,8 +1,8 @@
-### generator-mvvm-module-kotlin-module
+### generator-mvvm-kotlin
 
-> 基于Kotlin + Jetpack全家桶开发的mvvm组件化脚手架 :)
+> 基于Kotlin + Jetpack全家桶+协程开发的mvvm组件化脚手架 :)
 
-**stack**：MVVM/Kotlin/DataBinding/Rxjava2/Retrofit2/ViewModel/LiveData/Room/Koin/ARouter/Qmui
+**stack**：MVVM/Kotlin/DataBinding/协程/Retrofit2/ViewModel/LiveData/Room/Koin/ARouter/Qmui
 
 ![](https://user-gold-cdn.xitu.io/2018/11/22/1673bc1247150cea?w=1240&h=607&f=png&s=161830)
 
@@ -16,16 +16,10 @@
    - DataBinding：将布局组件与源数据绑定，使源数据变化的同时布局组件及时同步更新，与ViewModel、LiveData、Lifecycles搭配使用，能够碰撞出极致的MVVM火花
    - Room：流畅地访问 SQLite 数据库；
    - Koin: 是一个用于kotlin的实用型轻量级依赖注入框架，采用纯kotlin编写而成，仅使用功能解析，无代理、无代码生成、无反射。koin 是一个DSL,一个轻便的容易和一个使用的API。从此告别Dagger2的困境，让依赖注入更加简单。
-- 组件化
-   - ARouter：module之间跳转的工具
+- 协程：使用Rxjava 处理不好的话会有内存泄露的风险，我们会用使用AutoDispose、RxLifecycle等方式来处理，但是使用协程来请求数据，完全不用担心这个问题，所有请求都是在viewModelScope中启动，当页面销毁的时候，会统一取消，不用关心这个问题了。
 - 登录+主页
 - 单元测试vm层
 
-### Installation：
-```bash
-npm install mvvm_zjx -g
-mvvm-zjx-cli init XXX
-```
 
 ### 公司：
 - [讯飞淘云](https://www.toycloud.com)

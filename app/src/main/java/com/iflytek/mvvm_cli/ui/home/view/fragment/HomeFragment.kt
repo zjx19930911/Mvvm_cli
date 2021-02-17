@@ -6,8 +6,8 @@ import com.iflytek.mvvm_cli.R
 import com.iflytek.mvvm_cli.base.BaseFragment
 import com.iflytek.mvvm_cli.databinding.FragmentHomeBinding
 import com.iflytek.mvvm_cli.extens.observerFilter
-import com.iflytek.mvvm_cli.extens.observerListFilter
 import com.iflytek.mvvm_cli.extens.showFailedDialog
+import com.iflytek.mvvm_cli.extens.showSuccessDialog
 import com.iflytek.mvvm_cli.ui.home.viewmodel.HomeViewModel
 import com.iflytek.mvvm_cli.utils.ClickPresent
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -29,17 +29,18 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
 
     override fun initView() {
         mBinding.topBar.setTitle("主页")
-    }
-
-    override fun lazyLoad() {
-        showProgressDialog()
-        mViewModel.detail()
-        mViewModel.detailResult.observerListFilter(this, {
+        mViewModel.detailResult.observerFilter(this, {
             dismissProgressDialog()
         }, { msg, _ ->
             dismissProgressDialog()
             showFailedDialog(msg)
         })
+    }
+
+    override fun lazyLoad() {
+        showProgressDialog()
+        mViewModel.detail()
+
     }
 
     override fun onClick(v: View?) {
