@@ -12,7 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/qmui_s_transparent</item>
         <!-- Customize your theme here. -->
-        <item name="qmui_topbar_height">54dp</item>
+        <item name="qmui_topbar_height">44dp</item>
         <item name="QMUITopBarStyle">@style/QTopBar</item>
     </style>
     <style name="QTopBar" parent="QMUI.TopBar">

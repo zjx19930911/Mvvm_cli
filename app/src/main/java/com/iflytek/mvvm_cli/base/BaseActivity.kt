@@ -24,12 +24,11 @@ abstract class BaseActivity<VDB : ViewDataBinding> : AppCompatActivity() {
         dialog
     }
 
-    private fun <T : ViewDataBinding> binding(@LayoutRes contentLayoutId: Int): T {
-        return lazy {
+    private fun <T : ViewDataBinding> binding(@LayoutRes contentLayoutId: Int): T =
+        lazy {
             DataBindingUtil.setContentView<T>(this, contentLayoutId)
                 .apply { this.lifecycleOwner = this@BaseActivity }
         }.value
-    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

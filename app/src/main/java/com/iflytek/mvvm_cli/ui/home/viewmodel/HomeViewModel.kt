@@ -10,10 +10,12 @@ import com.iflytek.mvvm_cli.ui.home.repository.HomeRepository
 class HomeViewModel(var homeRepo: HomeRepository, application: Application) :
     BaseViewModel(application) {
 
-    val detailResult = MyMutableLiveData<List<AccountBean>>()
+    val detailResult = MyMutableLiveData<AccountBean>()
 
-    fun detail() {
-        launchHttp({ homeRepo.detail() }, {
+    fun detail(page: Int) {
+        launchHttp({
+            homeRepo.detail(page)
+        }, {
             detailResult.postResult(true, it)
         }, { msg, code ->
             detailResult.postResult(false, errorMessage = msg, code = code)

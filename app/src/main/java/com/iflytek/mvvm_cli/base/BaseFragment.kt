@@ -20,31 +20,30 @@ abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
     private var isLoad = false
     private val progressDialog: Dialog by lazy {
         val dialog = QMUITipDialog.Builder(activity)
-                .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
-                .setTipWord("正在加载").create()
+            .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
+            .setTipWord("正在加载").create()
         println("dialog init!")
         dialog
     }
 
     private fun <T : ViewDataBinding> binding(
-            inflater: LayoutInflater,
-            @LayoutRes contentLayoutId: Int
-    ): T {
-        return lazy {
-            DataBindingUtil.inflate<T>(inflater, contentLayoutId, null, false)
-                    .apply { this.lifecycleOwner = this@BaseFragment }
-        }.value
-    }
+        inflater: LayoutInflater,
+        @LayoutRes contentLayoutId: Int
+    ): T = lazy {
+        DataBindingUtil.inflate<T>(inflater, contentLayoutId, null, false)
+            .apply { this.lifecycleOwner = this@BaseFragment }
+    }.value
 
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         mBinding = binding<VDB>(inflater, getLayoutId())
         bindVM()
         initView()
+        initObserver()
         return mBinding.root
     }
 
@@ -59,6 +58,10 @@ abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
      */
     abstract fun initView()
 
+    /**
+     * 初始化数据
+     */
+    abstract fun initObserver()
 
     override fun onResume() {
         super.onResume()

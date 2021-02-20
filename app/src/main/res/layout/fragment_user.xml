@@ -13,38 +13,44 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.qmuiteam.qmui.widget.QMUITopBarLayout
-            android:id="@+id/topBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:orientation="vertical">
 
-            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                android:layout_width="wrap_content"
+            <com.qmuiteam.qmui.widget.QMUITopBarLayout
+                android:id="@+id/topBar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/insert"
-                android:gravity="center"
-                android:onClick="@{(view)->click.onClick(view)}"
-                android:padding="10dp"
-                android:text="插入数据"
-                android:textSize="18sp" />
+                android:fitsSystemWindows="true" />
 
-            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:id="@+id/query"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                android:onClick="@{(view)->click.onClick(view)}"
-                android:padding="10dp"
-                android:text="查询数据"
-                android:textSize="18sp" />
+                android:orientation="vertical">
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/insert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:onClick="@{(view)->click.onClick(view)}"
+                    android:padding="10dp"
+                    android:text="插入数据"
+                    android:textSize="18sp" />
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/query"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:onClick="@{(view)->click.onClick(view)}"
+                    android:padding="10dp"
+                    android:text="查询数据"
+                    android:textSize="18sp" />
+            </LinearLayout>
         </LinearLayout>
     </com.qmuiteam.qmui.widget.QMUIWindowInsetLayout>
 </layout>

@@ -3,6 +3,7 @@ package com.iflytek.mvvm_cli.ui.main.view.activity
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
+import androidx.lifecycle.lifecycleScope
 import com.iflytek.mvvm_cli.R
 import com.iflytek.mvvm_cli.base.BaseActivity
 import com.iflytek.mvvm_cli.databinding.ActivityMainBinding

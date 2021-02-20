@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <com.qmuiteam.qmui.layout.QMUILinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:id="@+id/layout"
+        android:layout_height="wrap_content">
+
+        <com.qmuiteam.qmui.alpha.QMUIAlphaTextView
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:id="@+id/name"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/qmui_config_color_gray_9"
+            android:layout_height="1dp" />
+    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+</layout>

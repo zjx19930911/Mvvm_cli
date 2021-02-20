@@ -95,6 +95,10 @@ dependencies {
     api "com.qmuiteam:arch:2.0.0-alpha10"
     kapt "com.qmuiteam:arch-compiler:2.0.0-alpha10" // use annotationProcessor if java
 
+    //SmartRefreshLayout
+    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.3'
+    implementation  'com.scwang.smart:refresh-header-classics:2.0.3'
+
     //leakcanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.6'
 }

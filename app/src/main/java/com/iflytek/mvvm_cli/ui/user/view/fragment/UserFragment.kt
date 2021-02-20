@@ -30,6 +30,9 @@ class UserFragment : BaseFragment<FragmentUserBinding>(),
 
     override fun initView() {
         mBinding.topBar.setTitle("我的")
+    }
+
+    override fun initObserver() {
         mViewModel.detailResult.observerFilter(this, {
             dismissProgressDialog()
             showSuccessDialog("网络获取到的页数:" + it?.curPage)
@@ -71,5 +74,7 @@ class UserFragment : BaseFragment<FragmentUserBinding>(),
             }
         }
     }
+
+
 
 }

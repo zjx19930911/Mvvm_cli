@@ -5,6 +5,9 @@ import com.iflytek.mvvm_cli.room.AppDatabase
 import com.iflytek.mvvm_cli.ui.home.api.HomeApi
 import com.iflytek.mvvm_cli.ui.home.repository.HomeRepository
 import com.iflytek.mvvm_cli.ui.home.viewmodel.HomeViewModel
+import com.iflytek.mvvm_cli.ui.login.api.LoginApi
+import com.iflytek.mvvm_cli.ui.login.repository.LoginRepository
+import com.iflytek.mvvm_cli.ui.login.viewmodel.LoginViewModel
 import com.iflytek.mvvm_cli.ui.main.viewmodel.MainViewModel
 import com.iflytek.mvvm_cli.ui.splash.viewmodel.SplashViewModel
 import com.iflytek.mvvm_cli.ui.user.api.UserApi
@@ -25,6 +28,15 @@ val homeViewModelModule = module {
     viewModel {
         HomeViewModel(
             HomeRepository(retrofit(HomeApi::class.java)),
+            application = androidApplication()
+        )
+    }
+}
+
+val loginViewModelModule = module {
+    viewModel {
+        LoginViewModel(
+            LoginRepository(retrofit(LoginApi::class.java)),
             application = androidApplication()
         )
     }
@@ -54,6 +66,7 @@ val appModuleList by lazy {
         list.add(mainViewModelModule)
         list.add(homeViewModelModule)
         list.add(splashViewModel)
+        list.add(loginViewModelModule)
         list.add(userViewModelModule)
         list.toList()
     }
