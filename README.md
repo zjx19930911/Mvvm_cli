@@ -18,7 +18,21 @@
    - Koin: 是一个用于kotlin的实用型轻量级依赖注入框架，采用纯kotlin编写而成，仅使用功能解析，无代理、无代码生成、无反射。koin 是一个DSL,一个轻便的容易和一个使用的API。从此告别Dagger2的困境，让依赖注入更加简单。
 - 协程：使用Rxjava 处理不好的话会有内存泄露的风险，我们会用使用AutoDispose、RxLifecycle等方式来处理，但是使用协程来请求数据，完全不用担心这个问题，所有请求都是在viewModelScope中启动，当页面销毁的时候，会统一取消，不用关心这个问题了。
 - 登录+主页
-- 单元测试vm层
+- npm：使用npm脚手架下载，可以自定义项目包名，比git clone 手动修改包名方便许多
+
+### Installation：
+```bash
+npm install -g generator-mvvm-cli-zjx 
+npm install -g yo
+
+```
+Then generate your new project:
+
+```bash
+mkdir NewApp
+cd NewApp
+yo mvvm-cli-zjx
+```
 
 
 ### 公司：
